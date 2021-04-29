@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-md-center">Dear {{user}}, your order tracking is available now:</div>
+
+                <div class="card-body">
+                    <div class="form-control">
+                        Order # {{orderNum}}
+                    </div>
+                    <div class="form-control" *ngIf="wait <= 16 && wait > 12">
+                        Status: PLACED
+                    </div>
+                    <div class="form-control" *ngIf="wait <= 12 && wait > 5">
+                        Status: COOKING
+                    </div>
+                    <div class="form-control" *ngIf="wait <= 5 && wait > 0">
+                        Status: ON THE WAY
+                    </div>
+                    <div class="form-control" *ngIf="wait <= 0">
+                        Status: DELIVERED
+                    </div>
+                    
+                    <div class="form-control" *ngIf="wait >= 0">
+                        Timer: {{wait}} sec
+                    </div>
+                    
+                    <div class="form-control" *ngIf="wait < 0">
+                        Timer: 0 sec
+                    </div>
+                </div>    
+
+            </div>
+
+            <div class="card">
+                <div class="card-header text-md-center">LIVE STATUS</div>
+                <div class="row justify-content-center">
+                    <div class="card-columns">
+
+                    <div class="card booking-card" *ngIf="wait <= 16">
+                        <div class="card-body">
+                        <button class="btn btn-outline-info">PLACED</button>
+                        </div>
+                    </div>
+                    <div class="card booking-card" *ngIf="wait <= 12">
+                        <div class="card-body">
+                        <button class="btn btn-outline-info">COOKING</button>
+                        </div>
+                    </div>
+                    <div class="card booking-card" *ngIf="wait <= 5">
+                        <div class="card-body">
+                        <button class="btn btn-outline-info">PICKED UP</button>
+                        </div>
+                    </div>
+                    <div class="card booking-card" *ngIf="wait <= 0">
+                        <div class="card-body">
+                        <button class="btn btn-outline-info">DELIVERED</button>
+                        </div>
+                    </div>
+                    </div>
+</div>
+            </div>
+
+        </div>
+    </div>
+</div>

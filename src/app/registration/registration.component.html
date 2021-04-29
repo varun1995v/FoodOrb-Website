@@ -1,0 +1,77 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card">
+                <div class="card-header text-md-center">Register</div>
+
+                <div class="card-body">
+
+                    <form #f="ngForm" *ngIf=(formOpen) name="form" method="POST">
+
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">PHONE</label>
+                            <div class="col-md-6">
+                                <input id="phone" type="number" class="form-control" name="phone" ngModel #phone="ngModel" required autocomplete="phone">
+                                <div class="alert alert-danger" role="alert" 
+                                *ngIf="phone.touched && phone.invalid && email.errors?.required">
+                                    <span style="color: red">Phone Number is required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">NAME</label>
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" ngModel #name="ngModel" required autocomplete="name">
+                                <div class="alert alert-danger" role="alert" 
+                                *ngIf="name.touched && name.invalid && name.errors?.required">
+                                    <span style="color: red">Name is required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">EMAIL</label>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" ngModel #email="ngModel" required autocomplete="email">
+                                <div class="alert alert-danger" role="alert" 
+                                *ngIf="email.touched && email.invalid && email.errors?.required">
+                                    <span style="color: red">Email is required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">PASSWORD</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" ngModel #password="ngModel" required autocomplete="password">
+                                <div class="alert alert-danger" role="alert" 
+                                *ngIf="password.touched && password.invalid && email.password?.required">
+                                    <span style="color: red">Password is required</span>
+                                </div>
+                            </div>
+                        </div>                       
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" (click)="signUp(f.value)" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    
+                    </form>
+
+                    <div class="alert alert-success" *ngIf="hasRegistered">
+                        <span style="color: green">Sign up is successful. You may login now.</span>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="!hasRegistered && !formOpen">
+                        <span style="color: red">An error occured during sign up process</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

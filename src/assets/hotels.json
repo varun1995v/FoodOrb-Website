@@ -1,0 +1,31 @@
+{
+   "hotels": [
+    { "id": 1, "name": "Subway", "rating": 4.5, "zipcode": 10021, 
+        "items": [
+            { "id": 1, "name": "SubCombo1", "price": 300, "image": "assets/food1.png" },
+            { "id": 2, "name": "SubCombo2", "price": 320, "image": "assets/food1.png" },
+            { "id": 3, "name": "SubCombo3", "price": 305, "image": "assets/food1.png" } 
+        ],
+    "image": "/assets/subway.png" },
+    { "id": 2, "name": "Dominos", "rating": 4.0, "zipcode": 10021, 
+        "items": [
+            { "id": 1, "name": "Pizza 1", "price": 200, "image": "assets/food2.png" },
+            { "id": 2, "name": "Pizza 2", "price": 220, "image": "assets/food2.png" },
+            { "id": 3, "name": "Drinks", "price": 100, "image": "assets/food3.png" } 
+        ],
+    "image": "/assets/dominos.png" },
+    { "id": 3, "name": "Briskee", "rating": 4.8, "zipcode": 10023, 
+        "items": [
+            { "id": 1, "name": "Meal 1", "price": 400, "image": "assets/assets/food1.png" },
+            { "id": 2, "name": "Meal 2", "price": 420, "image": "assets/assets/food1.png" }
+        ],
+    "image": "/assets/rhr.png" },
+    { "id": 4, "name": "CreamC", "rating": 5.0, "zipcode": 10021, 
+        "items": [
+            { "id": 1, "name": "Drink1", "price": 800, "image": "assets/food3.png" },
+            { "id": 2, "name": "Drink2", "price": 730, "image": "assets/food3.png" },
+            { "id": 3, "name": "Platter", "price": 760, "image": "assets/food1.png" } 
+        ],
+    "image": "/assets/ccc.png" }
+   ]
+}

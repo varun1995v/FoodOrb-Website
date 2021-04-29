@@ -1,0 +1,93 @@
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+<div class="card">
+    <div class="card-header text-md-center" >Address Settings</div>
+    <div class="card-body">
+
+        <form #f1="ngForm" name="form" method="POST">
+
+            <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right">Add new Address</label>
+                <div class="col-md-6">
+                    <input id="address" type="text" class="form-control" name="address" ngModel #address="ngModel" required autocomplete="address">
+                    <div class="alert alert-danger" role="alert" 
+                    *ngIf="address.touched && address.invalid && address.errors?.required">
+                        <span style="color: red">Address is required</span>
+                    </div>
+                </div>
+            </div>                    
+            <div class="form-group row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="reset" class="btn btn-outline-primary">Reset</button>
+                    <button type="submit" (click)="addAddress(f1.value)" class="btn btn-primary">Add Address</button>
+                </div>
+            </div>
+        
+        </form>
+
+        <div class="alert alert-success" *ngIf="addressAdded && addressAddTry">
+            <span style="color: green">Address has been added.</span>
+        </div>
+        <div class="alert alert-danger" *ngIf="!(addressAdded) && addressAddTry">
+            <span style="color: red">Address was not added.</span>
+        </div>
+
+    </div>
+
+    <div class="card-header text-md-center" >List of Addresses</div>
+    <div class="card-body">
+        <div class="form-control" *ngFor="let address of addresses">
+            {{address.address}}
+        </div>
+    </div>
+
+</div>
+
+<div class="card">
+    <div class="card-header text-md-center" >Payment Settings</div>
+    <div class="card-body">
+
+        <form #f2="ngForm" name="form" method="POST">
+
+            <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right">Add new Card</label>
+                <div class="col-md-6">
+                    <input id="card" type="number" class="form-control" name="card" ngModel #card="ngModel" required autocomplete="card">
+                    <div class="alert alert-danger" role="alert" 
+                    *ngIf="card.touched && card.invalid && card.errors?.required">
+                        <span style="color: red">Card Number is required</span>
+                    </div>
+                </div>
+            </div>                    
+            <div class="form-group row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="reset" class="btn btn-outline-primary">Reset</button>
+                    <button type="submit" (click)="addCard(f2.value)" class="btn btn-primary">Add Card</button>
+                </div>
+            </div>
+        
+        </form>
+
+        <div class="alert alert-success" *ngIf="cardAdded && cardAddTry">
+            <span style="color: green">Card has been added.</span>
+        </div>
+        <div class="alert alert-danger" *ngIf="!(cardAdded) && cardAddTry">
+            <span style="color: red">Card was not added.</span>
+        </div>
+
+    </div>
+
+    <div class="card-header text-md-center" >List of Payment Cards</div>
+    <div class="card-body">
+        <div class="form-control" *ngFor="let card of cards">
+            {{card.card}}
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>

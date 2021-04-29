@@ -1,0 +1,182 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "phone": 1002310023,
+      "name": "Lucas",
+      "email": "lucas@email.com",
+      "password": "lucas123",
+      "type": "Admin",
+      "friends": [],
+      "image": "/assets/avatar1.png",
+      "addresses": [],
+      "cards": []
+    },
+    {
+      "name": "Daiko",
+      "phone": 2002320023,
+      "type": "Registered",
+      "email": "daiko@email.com",
+      "friends": [
+        {
+          "id": 5
+        }
+      ],
+      "image": "/assets/avatar1.png",
+      "password": "daiko456",
+      "addresses": [],
+      "cards": [],
+      "id": 2
+    },
+    {
+      "name": "Azalea",
+      "phone": 4002340023,
+      "type": "Registered",
+      "email": "azalea@email.com",
+      "friends": [
+        {
+          "id": 5
+        }
+      ],
+      "image": "/assets/avatar2.png",
+      "password": "azalea123",
+      "cards": [],
+      "addresses": [],
+      "id": 3
+    },
+    {
+      "name": "Sazo",
+      "phone": 999555666,
+      "type": "Registered",
+      "email": "sazo@email.com",
+      "friends": [
+        {
+          "id": 2
+        },
+        {
+          "id": 6
+        },
+        {
+          "id": 9
+        }
+      ],
+      "image": "/assets/avatar1.png",
+      "password": "miku123",
+      "cards": [
+        {
+          "card": "2300230023002300"
+        },
+        {
+          "card": "2100210021002100"
+        },
+        {
+          "card": 3405340534054405
+        }
+      ],
+      "addresses": [
+        {
+          "address": "East Maple Colony, H2, 10021"
+        },
+        {
+          "address": "Kaziimoz Academy, Suite 103, 10021"
+        },
+        {
+          "address": "Miku's House, 201, 10021"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Miku",
+      "phone": 222444555,
+      "email": "miku@email.com",
+      "password": "miku222",
+      "type": "Registered",
+      "friends": [
+        {
+          "id": 5
+        }
+      ],
+      "image": "/assets/avatar2.png",
+      "addresses": [],
+      "cards": []
+    },
+    {
+      "name": "Hagorrh",
+      "phone": 609609609,
+      "type": "Registered",
+      "email": "hag@email.com",
+      "friends": [],
+      "image": "/assets/avatar1.png",
+      "password": "hag456",
+      "id": 7,
+      "addresses": [],
+      "cards": []
+    },
+    {
+      "name": "Torph",
+      "phone": 700800900,
+      "type": "Registered",
+      "email": "torphee@tmail.com",
+      "friends": [],
+      "image": "/assets/avatar1.png",
+      "password": "toprh555",
+      "addresses": [],
+      "cards": [],
+      "id": 8
+    },
+    {
+      "name": "Xavio",
+      "phone": 8870422063,
+      "type": "Registered",
+      "email": "blenki@email.com",
+      "friends": [
+        {
+          "id": 5
+        }
+      ],
+      "image": "/assets/avatar1.png",
+      "password": "blenki666",
+      "addresses": [
+        {
+          "address": "Dranos Tower, Cell 403, 10333"
+        }
+      ],
+      "cards": [],
+      "id": 9
+    },
+    {
+      "name": "Regius",
+      "phone": 3334443333,
+      "type": "Registered",
+      "email": "regius@rmail.com",
+      "friends": [],
+      "image": "/assets/avatar1.png",
+      "password": "regi222",
+      "addresses": [],
+      "cards": [],
+      "id": 10
+    },
+    {
+      "name": "Kiiteo",
+      "phone": 4445556666,
+      "type": "Registered",
+      "email": "kiiteo@kmail.com",
+      "friends": [],
+      "image": "/assets/avatar1.png",
+      "password": "kii456",
+      "addresses": [
+        {
+          "address": "1500 Graduate Lane, Apt 102"
+        }
+      ],
+      "cards": [
+        {
+          "card": 3333
+        }
+      ],
+      "id": 11
+    }
+  ]
+}

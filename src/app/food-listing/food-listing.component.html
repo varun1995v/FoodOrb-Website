@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+<div class="card">
+    <div class="card-header text-md-center" >Order food from favorite restaurants near you</div>
+
+    <div class="card-body">
+
+        <div class="row justify-content-center">
+            <div class="card-columns">
+                <div class="card booking-card" *ngFor="let hotel of selectHotels">
+
+                        <div class="view overlay">
+                            <img class="card-img-top" src="{{hotel.image}}" alt="Card image cap">
+                            <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <div class="card-body">
+    
+                            <h4 class="card-title font-weight-bold text-md-center"><a>{{ hotel.name }}</a></h4>
+                            <p class="text-muted text-md-center"><strong>{{ hotel.rating }} stars</strong></p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="gotoHotel(hotel.id)">
+                                Choose
+                            </button>
+    
+                        </div>
+    
+                    </div>
+    
+            </div>
+        </div>
+
+
+        <div class="alert alert-danger" role="alert" *ngIf="notFound">
+            <span style="color: red">No hotels found in this location.</span>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</div>
+</div>

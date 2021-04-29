@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+<div class="card">
+    <div class="card-header text-md-center" >Order food from favorite restaurants near you</div>
+
+    <div class="card-body">
+
+        <div class="form-group row" *ngIf=(hasLoggedIn)>
+            Welcome to the FoodOrb Feed Page, Dear {{username}}
+        </div>
+
+        <div class="form-group row" *ngIf=(!hasLoggedIn)>
+            Welcome to the FoodOrb Feed Page, Dear Guest
+        </div>
+
+        <form #f="ngForm" name="form" method="POST">
+            <div class="form-group row">
+                <label for="location" class="col-md-4 col-form-label text-md-right">ZIP CODE</label>
+
+                <div class="col-md-6">
+                <input id="location" class="form-control" type="text" name="location" value="Enter location" ngModel #location="ngModel" required autocomplete="location">
+                </div>
+            </div>
+
+            <div class="form-group row mb-0">
+                <div class="col-md-8 offset-md-4">
+                    <button type="submit" (click)="searchHotel(f.value.location)" class="btn btn-primary">Search Food</button>
+                </div>
+            </div>
+        </form>
+
+        <br>
+        <div class="form-group row" *ngIf=(hasLoggedIn)>
+            <br>
+            <button class="btn btn-outline-info" text="View Friends"><a class="nav-link" href="api/v1/friends">View Friends</a></button>
+        </div>
+        <div class="form-group row" *ngIf=(hasLoggedIn)>
+            <br>
+            <button class="btn btn-outline-info" text="View Friends"><a class="nav-link" (click)="viewProfile()">View Profile</a></button>
+        </div>
+        <div class="form-group row" *ngIf=(isAdmin)>
+            <br>
+            <button class="btn btn-outline-info" text="List of Users"><a class="nav-link" href="api/v1/users">List of Users</a></button>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</div>
+</div>

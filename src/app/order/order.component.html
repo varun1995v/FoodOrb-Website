@@ -1,0 +1,143 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+<div class="card">
+    <div class="card-header text-md-center" >Order Menu</div>
+
+    <div class="card-body">
+
+        <div class="row justify-content-center">
+            <div class="card-columns">
+                <div *ngFor="let item of items" class="card booking-card">
+
+                        <div class="view overlay">
+                            <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                            <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <div class="card-body">
+    
+                            <h4 class="card-title font-weight-bold text-md-center"><a>{{ item.name }}</a></h4>
+                            <p class="text-muted text-md-center"><strong>{{ item.price | currency: 'INR'}} </strong></p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="addItem(item)">
+                                Choose
+                            </button>
+    
+                        </div>
+    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<form #f="ngForm" name="form" method="POST">
+<div class="card">
+    <div class="card-header text-md-center" >View Cart</div>
+
+    <div class="card-body text-md-center">
+        <div class="row justify-content-center">
+            <div class="card-columns" style="margin-left: 300px">
+                <div class="card booking-card">
+                    <table class="table text-md-center" >
+                        <thead>
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of selectItems" >
+                            <td>{{item.name}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.price}}</td>
+                          </tr>
+                          <tr>
+                              <td>TOTAL: </td>
+                              <td></td>
+                              <td>{{orderSum | currency: 'INR'}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="row justify-content-center" style="margin: 6px">
+                        <button class="btn btn-outline-info" (click)="clearCart()">Clear Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <br>
+        <div class="card booking-card" *ngIf="currentUserName==''">
+            <div class="card-body text-md-center">
+                Enter your Address: <br>
+                    <div class="form-group">
+                        <input style="width: 640px" id="address" class="form-control" type="address" 
+                            name="address" value="Address" ngModel #address="ngModel" required autocomplete="address">
+                        <div class="alert alert-danger" role="alert" 
+                          *ngIf="address.touched && address.invalid && address.errors?.required">
+                            <span style="color: red">Address is required</span>
+                        </div>
+                    </div>
+                
+                    <div class="row justify-content-center" style="margin: 6px">
+                        Select Payment Method - |    
+                        <div class="form-group">
+                            <select id="payment" class="form-select" ngModel #payment="ngModel" required name="payment" aria-label="payment-option">
+                                <option selected value="cash">Cash</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" style="margin: 6px">
+                        <button class="btn btn-outline-info" (click)="checkout()">Checkout Now</button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="card booking-card" *ngIf="currentUserName!=''">
+            <div class="card-body text-md-center">
+                Enter your Address: <br>
+                    <div class="form-group">
+                        <select id="address" class="form-select" ngModel #address="ngModel" required name="address" aria-label="payment-option">
+                            <option *ngFor="let address of addresses" value="{{address.address}}">{{address.address}}</option>
+                        </select>
+                    </div>
+                
+                    <div class="row justify-content-center" style="margin: 6px">
+                        Select Payment Method - |    
+                        <div class="form-group">
+                            <select id="card" class="form-select" ngModel #card="ngModel" required name="payment" aria-label="payment-option">
+                                <option *ngFor="let card of cards" value="{{card.card}}">{{card.card}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" style="margin: 6px">
+                        <button class="btn btn-outline-info" (click)="checkout(f.value.card, f.value.address)">Checkout Now</button>
+                    </div>
+
+                    <div class="alert alert-info" *ngIf="addresses.length==0">
+                        <span style="color: blue">Go to SETTINGS page to add new address</span>
+                    </div>
+                    <div class="alert alert-info" *ngIf="cards.length==0">
+                        <span style="color: blue">Go to SETTINGS page to add new cards</span>
+                    </div>
+                    <div class="alert alert-danger" *ngIf=(orderError)>
+                        <span style="color: red">Unable to process order without card/address</span>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</form>
+
+</div>
+</div>
+</div>
